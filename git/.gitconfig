@@ -1,0 +1,23 @@
+[includeIf "gitdir:~/workspace/github/"]
+  path = ~/.gitconfig-github
+
+[includeIf "gitdir:~/workspace/gitea/"]
+  path = ~/.gitconfig-gitea
+
+[core]
+  editor = nvim
+  pager = less -F -X
+  excludesfile = ~/.gitignore_global
+
+[color]
+  ui = auto
+
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  lg = log --oneline --graph --all --decorate
+
+[init]
+  defaultBranch = main

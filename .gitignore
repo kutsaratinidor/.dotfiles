@@ -1,0 +1,31 @@
+# 🔐 Private Git identity
+git/.gitconfig-gitea
+
+# 🧠 System files
+.DS_Store
+Thumbs.db
+
+# 🐍 Python
+__pycache__/
+*.pyc
+
+# 🌐 Node
+node_modules/
+
+# 🧪 Logs, temp files
+*.log
+*.swp
+*.tmp
+
+# 🛠️ Editor config
+.vscode/
+.idea/
+*.code-workspace
+
+# 🗃️ macOS metadata
+.AppleDouble
+.LSOverride
+
+# 📦 Package manager backups
+*.bak
+*.old
