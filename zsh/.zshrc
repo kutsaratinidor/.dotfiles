@@ -23,20 +23,24 @@ if command -v starship &>/dev/null; then
 fi
 
 # --------------------------------------
-# 🌈 Syntax Highlighting (if installed)
+# 🌈 Syntax Highlighting
 # --------------------------------------
 if [[ -f "$(brew --prefix 2>/dev/null)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
   source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-  # Disable underline
-  (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-  ZSH_HIGHLIGHT_STYLES[path]=none
-  ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+elif [[ -f "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
+# Disable underline
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
 # --------------------------------------
-# 💡 Autosuggestions (if installed)
+# 💡 Autosuggestions
 # --------------------------------------
 if [[ -f "$(brew --prefix 2>/dev/null)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
   source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+elif [[ -f "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+  source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
