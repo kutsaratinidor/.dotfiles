@@ -1,5 +1,16 @@
 # zsh Options
-setopt HIST_IGNORE_ALL_DUPS
+# Increase history size
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+
+# Useful history settings
+setopt HIST_IGNORE_DUPS     # Don't store duplicate commands
+setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks
+setopt INC_APPEND_HISTORY   # Write commands to history immediately
+setopt SHARE_HISTORY        # Share history across terminals
+
+
 
 # Custom zsh
 [ -f "$HOME/.config/zsh/custom.zsh" ] && source "$HOME/.config/zsh/custom.zsh"

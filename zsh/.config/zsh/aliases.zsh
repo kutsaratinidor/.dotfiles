@@ -81,3 +81,6 @@ alias ll='lsd -la'
 
 # Lazygit
 alias lg="lazygit"
+
+# History workaround
+alias history='history 1'
