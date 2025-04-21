@@ -1,0 +1,27 @@
+# ~/.config/lsd/config.yaml
+
+classic: false
+color:
+  theme: custom
+
+# Customize file type icons
+icons:
+  when: always
+  theme: fancy
+  separator: "  "  # extra spacing
+
+# Layout
+date: "+%Y-%m-%d %H:%M"
+dereference: false
+display: all
+permission: rwx
+size: short
+sorting:
+  column: name
+  reverse: false
+  dir-grouping: first
+symlink-arrow: " ➜ "
+total-size: false
+header: false
+indicators: true
+
