@@ -17,3 +17,6 @@ setopt SHARE_HISTORY        # Share history across terminals
 
 # Aliases
 [ -f "$HOME/.config/zsh/aliases.zsh" ] && source "$HOME/.config/zsh/aliases.zsh"
+
+# Created by `pipx` on 2025-04-21 16:53:55
+export PATH="$PATH:/Users/spork/.local/bin"
