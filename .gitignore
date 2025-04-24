@@ -16,6 +16,7 @@ node_modules/
 *.log
 *.swp
 *.tmp
+*.un~
 
 # 🛠️ Editor config
 .vscode/
