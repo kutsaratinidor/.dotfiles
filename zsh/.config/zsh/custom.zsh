@@ -45,6 +45,7 @@ elif [[ -f "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; 
   source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
