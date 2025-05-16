@@ -85,6 +85,26 @@ sudo apt update && sudo apt install -y \
 # ~/.dotfiles/scripts/setup_debian.sh
 ```
 
+#### Uninstallation
+To remove all installed components and configurations:
+```bash
+# Make the uninstall script executable
+chmod +x ~/.dotfiles/scripts/uninstall_debian.sh
+
+# Run the uninstall script
+~/.dotfiles/scripts/uninstall_debian.sh
+```
+
+The uninstall script will:
+- Remove all symlinks created by stow
+- Uninstall installed packages and tools
+- Remove configuration directories
+- Restore default shell to bash
+- Clean up package manager
+- Remove fonts and custom configurations
+
+Note: The script will ask for confirmation before proceeding and will not delete the dotfiles repository itself.
+
 ### Linux (Arch)
 ```bash
 # Install dependencies
