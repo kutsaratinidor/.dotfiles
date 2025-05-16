@@ -47,7 +47,7 @@ brew install \
 #### Automatic Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+git clone https://github.com/kutsaratinidor/dotfiles.git ~/.dotfiles
 
 # Make the setup script executable
 chmod +x ~/.dotfiles/scripts/setup_debian.sh
