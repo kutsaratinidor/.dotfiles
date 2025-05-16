@@ -1,6 +1,6 @@
 # 🏠 Dotfiles
 
-My personal dotfiles for macOS development environment, managed with GNU Stow.
+My personal dotfiles for cross-platform development environment (macOS & Linux), managed with GNU Stow.
 
 ## ✨ Features
 
@@ -19,22 +19,82 @@ My personal dotfiles for macOS development environment, managed with GNU Stow.
 
 ## 📦 Dependencies
 
+### macOS
 ```bash
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install GNU Stow
-brew install stow
-
-# Core dependencies
+# Install core dependencies
 brew install \
+  stow \
   zsh \
   starship \
   lsd \
   tmux \
-  karabiner-elements \
   wezterm \
-  rectangle \
+  pyenv \
+  zsh-syntax-highlighting \
+  zsh-autosuggestions
+
+# macOS-specific tools
+brew install \
+  karabiner-elements \
+  rectangle
+```
+
+### Linux (Debian/Ubuntu)
+
+#### Automatic Installation
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+
+# Make the setup script executable
+chmod +x ~/.dotfiles/scripts/setup_debian.sh
+
+# Run the setup script
+~/.dotfiles/scripts/setup_debian.sh
+```
+
+The setup script will:
+- Install all required packages and dependencies
+- Set up Starship prompt
+- Install pyenv for Python version management
+- Install LSD (LSDeluxe) for better ls output
+- Install WezTerm terminal emulator
+- Install MesloLGS Nerd Font
+- Configure zsh as the default shell
+- Set up all dotfiles using stow
+
+#### Manual Installation
+If you prefer to install components manually:
+```bash
+# Install core dependencies
+sudo apt update && sudo apt install -y \
+  stow \
+  zsh \
+  tmux \
+  curl \
+  git \
+  python3 \
+  python3-pip \
+  zsh-syntax-highlighting \
+  zsh-autosuggestions
+
+# Additional tools can be installed following the script in
+# ~/.dotfiles/scripts/setup_debian.sh
+```
+
+### Linux (Arch)
+```bash
+# Install dependencies
+sudo pacman -S \
+  stow \
+  zsh \
+  starship \
+  lsd \
+  tmux \
+  wezterm \
   pyenv \
   zsh-syntax-highlighting \
   zsh-autosuggestions
@@ -70,7 +130,10 @@ stow */
 - Custom aliases for git, navigation, and system commands
 - Syntax highlighting and autosuggestions
 - Integration with pyenv
-- OS-specific configurations
+- Smart OS detection with platform-specific features:
+  - **macOS**: Native integrations with `pmset`, Finder, Quick Look
+  - **Linux**: Integration with `xdg-open`, `xclip`, systemd
+- Automatic plugin path detection for both platforms
 
 ### Karabiner-Elements
 - Caps Lock → Ctrl (hold) / Esc (tap)
@@ -129,10 +192,38 @@ stow */
 
 ## 📝 Notes
 
+### Platform-Specific Components
+
+#### macOS Only
+- Karabiner-Elements (keyboard customization)
+- Rectangle (window management)
+
+#### Linux Alternatives
+- Window Management: Most desktop environments have built-in window management
+- Keyboard Customization: Consider using xkb or kmonad
+
+### Font Installation
+
+#### macOS
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-meslo-lg-nerd-font
+```
+
+#### Linux
+```bash
+# Download MesloLGS NF from:
+# https://github.com/ryanoasis/nerd-fonts/releases
+mkdir -p ~/.local/share/fonts
+# Copy downloaded fonts to ~/.local/share/fonts
+fc-cache -fv
+```
+
+### General Notes
 - Back up your existing dotfiles before installation
-- Some configurations might need adjusting based on your system
-- Karabiner settings require manual approval in System Settings > Privacy & Security
-- WezTerm and Rectangle configurations assume macOS
+- Your zsh configuration will automatically detect the OS and load appropriate settings
+- Some paths may need adjusting based on your Linux distribution
+- Karabiner settings require manual approval in System Settings > Privacy & Security (macOS only)
 
 ## 📜 License
 
