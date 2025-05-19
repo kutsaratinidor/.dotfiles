@@ -45,7 +45,7 @@ brew install --cask font-meslo-lg-nerd-font
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+git clone https://github.com/kutsaratinidor/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
@@ -117,22 +117,6 @@ chsh -s $(which zsh)
 - Line numbers and relative numbers
 - System clipboard integration
 - File explorer configuration
-
-## Setting Up on a New Mac
-
-1. Install Homebrew and git:
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install git
-```
-
-2. Clone and set up:
-```bash
-git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-brew bundle  # Install all dependencies
-stow */     # Set up all configurations
-```
 
 ## Notes
 
