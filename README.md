@@ -2,6 +2,8 @@
 
 My personal dotfiles for macOS development environment, managed with GNU Stow.
 
+This was inspired by videos made by [Hendrik](https://github.com/hendrikmi) on his Youtube channel [Henry Misc](https://github.com/hendrikmi)
+
 ## Features
 
 - **Shell**: Zsh with custom aliases and syntax highlighting
